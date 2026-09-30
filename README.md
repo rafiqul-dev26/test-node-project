@@ -22,13 +22,24 @@ npm start
 
 Server: `http://localhost:3000`
 
+## API Documentation (Swagger)
+
+Interactive Swagger UI is available at:
+`http://localhost:3000/api-docs`
+
+Raw OpenAPI spec is available at:
+`http://localhost:3000/api-docs.json`
+
 ## Endpoints
 
-- `GET /api/users`
-- `GET /api/users/:id`
-- `POST /api/users`
-- `PUT /api/users/:id`
-- `DELETE /api/users/:id`
+- `GET /` - Root status
+- `GET /test` - Test endpoint with persistent visitor count
+- `GET /api` - API base status
+- `GET /api/users` - Get all users
+- `GET /api/users/:id` - Get single user by ID
+- `POST /api/users` - Create user
+- `PUT /api/users/:id` - Update user
+- `DELETE /api/users/:id` - Delete user
 
 ## Create user example
 

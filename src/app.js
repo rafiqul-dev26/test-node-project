@@ -4,6 +4,8 @@ const cors = require("cors");
 const routes = require("./routes");
 const loggerMiddleware = require("./middleware/logger.middleware");
 const errorMiddleware = require("./middleware/error.middleware");
+const { setupSwagger } = require("./config/swagger");
+const visitorService = require("./services/visitor.service");
 
 const app = express();
 
@@ -12,13 +14,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware);
 
+setupSwagger(app);
+
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
     message: "Node.js JSON API is running"
   });
 });
-const visitorService = require("./services/visitor.service");
 
 app.get("/test", (req, res) => {
   const visitorCount = visitorService.incrementVisitorCount();
