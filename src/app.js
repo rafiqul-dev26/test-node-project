@@ -18,10 +18,14 @@ app.get("/", (req, res) => {
     message: "Node.js JSON API is running"
   });
 });
+const visitorService = require("./services/visitor.service");
+
 app.get("/test", (req, res) => {
+  const visitorCount = visitorService.incrementVisitorCount();
   res.status(200).json({
     success: true,
-    message: "Node.js JSON API is running"
+    message: "Node.js JSON API is running",
+    visitorCount
   });
 });
 
