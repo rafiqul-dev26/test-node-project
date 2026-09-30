@@ -18,6 +18,12 @@ app.get("/", (req, res) => {
     message: "Node.js JSON API is running"
   });
 });
+app.get("/test", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Node.js JSON API is running"
+  });
+});
 
 app.use("/api", routes);
 
